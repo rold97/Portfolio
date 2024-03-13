@@ -1,7 +1,32 @@
 import Link from "next/link";
 import React from "react";
+import { motion } from "framer-motion";
 
-const MobileMenu = ({ open }) => {
+const MobileMenu = ({ open, setIsOpen }) => {
+  const listVariants = {
+    closed: {
+      x: "100vw",
+    },
+    opened: {
+      x: 0,
+      transition: {
+        when: "beforeChildren",
+        staggerChildren: 0.2,
+      },
+    },
+  };
+
+  const listItemVariants = {
+    closed: {
+      x: -10,
+      opacity: 0,
+    },
+    opened: {
+      x: 0,
+      opacity: 1,
+    },
+  };
+
   const links = [
     { url: "/", title: "Home" },
     { url: "/about", title: "About" },
@@ -10,23 +35,31 @@ const MobileMenu = ({ open }) => {
   ];
 
   return (
-    <div>
-      {/* MENU LIST */}
+    <>
       {open && (
-        <div className="absolute top-0 left-0 w-screen h-screen bg-black/95 flex flex-col items-center justify-center gap-14 text-4xl z-40">
+        <motion.div
+          className="absolute top-0 left-0 w-screen h-screen bg-black/95 flex flex-col items-center justify-center gap-14 text-4xl z-40"
+          variants={listVariants}
+          initial="closed"
+          animate="opened"
+        >
           {links.map((link) => (
-            <div key={link.title}>
+            <motion.div
+              key={link.title}
+              onClick={() => setIsOpen(!open)}
+              variants={listItemVariants}
+            >
               <Link
                 href={link.url}
-                className="text-neutral-100 hover:text-neutral-100/70 transition-all duration-200"
+                className="text-neutral-100 hover:text-neutral-100/70  transition-all duration-200"
               >
                 {link.title}
               </Link>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       )}
-    </div>
+    </>
   );
 };
 

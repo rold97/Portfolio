@@ -9,7 +9,7 @@ const NavLink = ({ link }) => {
   return (
     <Link
       className={`rounded-lg py-2 px-4 ${
-        pathName === link.url && "bg-black text-white font-semibold"
+        pathName === link.url && "bg-black text-white font-normal"
       }`}
       href={link.url}
     >

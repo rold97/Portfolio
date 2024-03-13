@@ -34,21 +34,21 @@ const MenuButton = ({ open }) => {
     <>
       {/* MENU BUTTON */}
       <button className="w-10 h-8 flex flex-col justify-between z-50 relative">
-        <div
+        <motion.div
           variants={topVariants}
           animate={open ? "opened" : "closed"}
           className="w-10 h-1 bg-black rounded origin-left"
-        ></div>
-        <div
+        ></motion.div>
+        <motion.div
           variants={centerVariants}
           animate={open ? "opened" : "closed"}
           className="w-10 h-1 bg-black rounded "
-        ></div>
-        <div
+        ></motion.div>
+        <motion.div
           variants={bottomVariants}
           animate={open ? "opened" : "closed"}
           className="w-10 h-1 bg-black rounded origin-left"
-        ></div>
+        ></motion.div>
       </button>
     </>
   );
