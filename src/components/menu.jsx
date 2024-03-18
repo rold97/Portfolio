@@ -11,7 +11,7 @@ const Menu = () => {
   return (
     <div className="hidden md:block">
       {/* MENU LIST */}
-      <div className="flex flex-row gap-10 font-light">
+      <div className="flex flex-row gap-10 font-light ">
         {links.map((link) => (
           <NavLink key={link.title} link={link} />
         ))}

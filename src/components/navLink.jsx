@@ -8,8 +8,10 @@ const NavLink = ({ link }) => {
 
   return (
     <Link
-      className={`rounded-lg py-2 px-4 ${
-        pathName === link.url && "bg-black text-white font-normal"
+      className={`rounded-lg py-2 px-4  transition-all duration-200 ${
+        pathName === link.url
+          ? "bg-black text-white font-normal"
+          : "hover:bg-black/10"
       }`}
       href={link.url}
     >
