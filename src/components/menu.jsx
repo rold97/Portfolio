@@ -9,7 +9,7 @@ const Menu = () => {
     { url: "/contact", title: "Contact" },
   ];
   return (
-    <div className="hidden md:block">
+    <div className="hidden lg:block">
       {/* MENU LIST */}
       <div className="flex flex-row gap-10 font-light ">
         {links.map((link) => (

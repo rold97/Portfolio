@@ -38,15 +38,15 @@ const ContactPage = () => {
 
   return (
     <motion.div
-      className="h-full"
+      className="h-full pb-12 lg:pb-0"
       initial={{ y: "-200vh" }}
       animate={{ y: "0%" }}
       transition={{ duration: 1 }}
     >
-      <div className="h-full flex flex-col lg:flex-row px-4 sm:px-8 md:px-12 lg:px-20 xl:px-48">
+      <div className="h-screen md:h-full flex flex-col lg:flex-row px-4 sm:px-8 md:px-12 lg:px-20 xl:px-48">
         <Toaster />
         {/* TEXT CONTAINER */}
-        <div className="h-1/2 lg:h-full lg:w-1/2 flex items-center justify-center text-6xl">
+        <div className="h-1/3 lg:h-full lg:w-1/2 flex items-center justify-center text-5xl md:text-6xl">
           <div>
             {text.split("").map((letter, index) => (
               <motion.span
@@ -65,11 +65,12 @@ const ContactPage = () => {
             😊
           </div>
         </div>
+
         {/* FORM CONTAINER */}
         <form
           onSubmit={sendEmail}
           ref={form}
-          className="h-1/2 lg:h-[95%] lg:w-1/2 bg-white/50 rounded-xl text-xl flex flex-col gap-8 justify-center p-24"
+          className="h-2/3 lg:h-[95%] lg:w-1/2 bg-white/50 rounded-xl text-xl flex flex-col gap-8 justify-center p-12 md:p-24"
         >
           <span>Dear Dima,</span>
           <textarea

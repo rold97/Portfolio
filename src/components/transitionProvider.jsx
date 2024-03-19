@@ -12,10 +12,10 @@ const TransitionProvider = ({ children }) => {
     <AnimatePresence mode="wait">
       <div
         key={pathName}
-        className="w-screen h-screen bg-gradient-to-b from-gray-200  to-gray-300 "
+        className="w-screen h-full md:h-screen bg-gradient-to-b from-gray-200  to-gray-300 "
       >
         <motion.div
-          className="h-screen w-screen fixed bg-black rounded-b-[100px] z-40"
+          className="h-full md:h-screen w-screen fixed bg-black rounded-b-[100px] z-40"
           animate={{ height: "0vh" }}
           exit={{ height: "140vh" }}
           transition={{ duration: 0.5, ease: "easeOut" }}
@@ -37,7 +37,7 @@ const TransitionProvider = ({ children }) => {
         <div className="h-24">
           <Navbar />
         </div>
-        <div className="h-[calc(100vh-6rem)]">{children}</div>
+        <div className="h-[100%-6rem] md:h-[calc(100vh-6rem)]">{children}</div>
       </div>
     </AnimatePresence>
   );

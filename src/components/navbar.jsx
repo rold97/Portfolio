@@ -23,11 +23,11 @@ const Navbar = () => {
       {/* MENU */}
       <Menu />
       {/* MOBILE MENU */}
-      <div className="md:hidden">
+      <div className="lg:hidden">
         <div onClick={() => setIsOpen(!open)}>
           <MenuButton open={open} />
         </div>
-        <MobileMenu open={open} setIsOpen={setIsOpen} className="md:hidden" />
+        <MobileMenu open={open} setIsOpen={setIsOpen} className="lg:hidden" />
       </div>
     </div>
   );

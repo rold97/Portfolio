@@ -23,9 +23,9 @@ const HomePage = () => {
       animate={{ y: "0%" }}
       transition={{ duration: 1 }}
     >
-      <div className="flex flex-col md:flex-row px-4 sm:px-8 md:px-12 lg:px-20 xl:px-24 items-center justify-center py-16 h-full gap-10">
+      <div className="flex flex-col md:flex-row px-4 sm:px-8 md:px-12 lg:px-20 xl:px-24 items-center justify-start md:justify-center py-16 h-full gap-10">
         {/* IMAGE CONTAINER */}
-        <div className="h-1/2 w-1/2 flex items-center justify-center">
+        <div className="h-full md:h-1/2 w-1/2 flex items-center justify-center">
           <div className="rounded-full h-[250px] w-[250px] sm:h-[300px] sm:w-[300px] md:h-[500px] md:w-[500px] xl:h-[600px] xl:w-[600px] bg-heroPhoto bg-cover bg-top shadow-2xl" />
         </div>
         {/* TEXT Container */}
@@ -39,7 +39,7 @@ const HomePage = () => {
               Frontend Developer
             </h2>
             {/* BUTTONS */}
-            <div className="flex flex-row gap-2 sm:gap-5 items-center py-1">
+            <div className="flex flex-col md:flex-row gap-2 sm:gap-5 items-center py-1">
               <Link href="/portfolio">
                 <button className="rounded-full bg-black text-gray-200 p-3 hover:scale-95 transition-all duration-200">
                   View My Works
